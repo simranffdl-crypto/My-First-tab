@@ -13,7 +13,7 @@ const services = [
         <path d="M9 12h6M12 9v6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
       </svg>
     ),
-    accent: "#C26464",
+    accent: "#e8614a",
     tags: ["Technical SEO", "Link Building", "Analytics"],
   },
   {
@@ -29,7 +29,7 @@ const services = [
         <path d="M8.5 13L19.5 7.5M8.5 15L19.5 20.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
       </svg>
     ),
-    accent: "#32596D",
+    accent: "#4fc3f7",
     tags: ["Content Creation", "Community", "Growth"],
   },
   {
@@ -44,7 +44,7 @@ const services = [
         <path d="M20 6h-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
       </svg>
     ),
-    accent: "#C26464",
+    accent: "#e8614a",
     tags: ["PPC", "Remarketing", "Conversion Tracking"],
   },
   {
@@ -62,7 +62,7 @@ const services = [
         <path d="M10 23v-2M18 23v-2M7 23h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
       </svg>
     ),
-    accent: "#32596D",
+    accent: "#4fc3f7",
     tags: ["UI/UX", "Responsive", "CRO"],
   },
   {
@@ -77,7 +77,7 @@ const services = [
         <path d="M24 23l2.5 2.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
       </svg>
     ),
-    accent: "#C26464",
+    accent: "#e8614a",
     tags: ["Blogs", "Video", "Email Sequences"],
   },
   {
@@ -90,7 +90,7 @@ const services = [
         <polygon points="14,3 17,10 25,10 19,15 21,23 14,18 7,23 9,15 3,10 11,10" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
       </svg>
     ),
-    accent: "#32596D",
+    accent: "#4fc3f7",
     tags: ["Identity", "Positioning", "Brand Voice"],
   },
 ];
@@ -151,19 +151,24 @@ function ServiceCard({ service, index }) {
       onMouseLeave={() => setHovered(false)}
       style={{
         position: "relative",
-        background: hovered ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.02)",
+        background: hovered
+          ? "rgba(255,255,255,0.04)"
+          : "rgba(255,255,255,0.02)",
         border: `1px solid ${hovered ? service.accent + "55" : "rgba(255,255,255,0.07)"}`,
         borderRadius: 16,
         padding: "36px 32px",
         cursor: "default",
         transition: "all 0.4s cubic-bezier(0.23,1,0.32,1)",
-        transform: visible ? (hovered ? "translateY(-6px)" : "translateY(0)") : "translateY(30px)",
+        transform: visible
+          ? hovered ? "translateY(-6px)" : "translateY(0)"
+          : "translateY(30px)",
         opacity: visible ? 1 : 0,
         transitionDelay: visible ? `${index * 80}ms` : "0ms",
         overflow: "hidden",
         backdropFilter: "blur(6px)",
       }}
     >
+      {/* Glow on hover */}
       <div
         style={{
           position: "absolute",
@@ -176,6 +181,7 @@ function ServiceCard({ service, index }) {
         }}
       />
 
+      {/* Top row */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 24 }}>
         <div
           style={{
@@ -233,6 +239,7 @@ function ServiceCard({ service, index }) {
         {service.description}
       </p>
 
+      {/* Tags */}
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
         {service.tags.map((tag) => (
           <span
@@ -254,6 +261,7 @@ function ServiceCard({ service, index }) {
         ))}
       </div>
 
+      {/* Bottom arrow */}
       <div
         style={{
           position: "absolute",
@@ -296,7 +304,7 @@ export default function ServicesSection() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@900&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
         @keyframes twinkle { from { opacity: 0.1; } to { opacity: 0.6; } }
         @keyframes slideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -317,13 +325,13 @@ export default function ServicesSection() {
         <div style={{
           position: "absolute", top: "10%", left: "5%",
           width: 400, height: 400,
-          background: "radial-gradient(circle, rgba(194,100,100,0.06) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(232,97,74,0.06) 0%, transparent 70%)",
           borderRadius: "50%", pointerEvents: "none",
         }} />
         <div style={{
           position: "absolute", bottom: "10%", right: "5%",
           width: 500, height: 500,
-          background: "radial-gradient(circle, rgba(50,89,109,0.05) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(79,195,247,0.05) 0%, transparent 70%)",
           borderRadius: "50%", pointerEvents: "none",
         }} />
 
@@ -347,8 +355,8 @@ export default function ServicesSection() {
             }}>
               <span style={{
                 width: 6, height: 6, borderRadius: "50%",
-                background: "#C26464",
-                boxShadow: "0 0 8px #C26464",
+                background: "#e8614a",
+                boxShadow: "0 0 8px #e8614a",
                 display: "inline-block",
               }} />
               <span style={{
@@ -362,16 +370,16 @@ export default function ServicesSection() {
 
             <h2 style={{
               fontFamily: "'Syne', sans-serif",
-              fontSize: "clamp(36px, 6vw, 58px)",
-              fontWeight: 900,
+              fontSize: "clamp(36px, 5vw, 58px)",
+              fontWeight: 800,
               color: "#fff",
-              letterSpacing: "-1.5px",
-              lineHeight: 1.05,
+              letterSpacing: "-0.03em",
+              lineHeight: 1.1,
               marginBottom: 20,
             }}>
               Services built for{" "}
               <span style={{
-                background: "linear-gradient(135deg, #C26464, #d98a8a)",
+                background: "linear-gradient(135deg, #e8614a, #ff9a7c)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}>
@@ -418,7 +426,7 @@ export default function ServicesSection() {
                 fontWeight: 700,
                 letterSpacing: "0.04em",
                 color: "#fff",
-                background: "#C26464",
+                background: "#e8614a",
                 border: "none",
                 borderRadius: 10,
                 padding: "16px 36px",
@@ -427,7 +435,7 @@ export default function ServicesSection() {
               }}
               onMouseEnter={e => {
                 e.target.style.transform = "translateY(-2px)";
-                e.target.style.boxShadow = "0 12px 36px rgba(194,100,100,0.4)";
+                e.target.style.boxShadow = "0 12px 36px rgba(232,97,74,0.4)";
               }}
               onMouseLeave={e => {
                 e.target.style.transform = "translateY(0)";
